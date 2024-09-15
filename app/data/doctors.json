@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Dr Navnit Naman",
+    "specialty": "Cardiologist",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 124,
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Dr. Rhythm jain",
+    "specialty": "Dermatologist",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 98,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Dr. Nilesh",
+    "specialty": "Pediatrician",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 150,
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Dr. Bhajan Singh",
+    "specialty": "Pediatrician",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 150,
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Dr Kanhaiya Kumar",
+    "specialty": "Psychatrist",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 100000,
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Dr. Abhijeet Kumar",
+    "specialty": "Dentist",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 765,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Dr. Abhijeet Kumar",
+    "specialty": "Dentist",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 765,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Dr. RONIT",
+    "specialty": "Dentist",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 765,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Dr. MEGHAVI (MALE)",
+    "specialty": "GYNECOLOGIST",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 69,
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Dr. Vishal (MALE)",
+    "specialty": "GYNECOLOGIST",
+    "avatarUrl": "/placeholder.svg?height=64&width=64",
+    "reviews": 69,
+    "rating": 5
+  }
+]
+
