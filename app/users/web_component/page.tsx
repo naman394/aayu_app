@@ -80,7 +80,7 @@ function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white py-4 px-4">
           <nav className="flex flex-col space-y-4">
-            <a href="./homePage" className="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+            <a href="../homePage" className="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
             <a href="./services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
             <a href="./doctors_page" className="text-gray-600 hover:text-blue-600 transition-colors">Doctors</a>
             <a href="./about_page" className="text-gray-600 hover:text-blue-600 transition-colors">About</a>

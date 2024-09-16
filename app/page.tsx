@@ -1,10 +1,17 @@
+// app/client-page.tsx
+'use client'; // Ensure this is at the top
 
-import HomePage from "./users/homePage/page";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
-  return (
+const ClientPage = () => {
+  const router = useRouter();
 
-    <HomePage />
-    
-  );
-}
+  useEffect(() => {
+    router.push('/users/homePage');
+  }, [router]);
+
+  return null; // Render nothing or a loading spinner
+};
+
+export default ClientPage;
