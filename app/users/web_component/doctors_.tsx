@@ -146,7 +146,8 @@ const doctors = [
 function DoctorsPageComponent() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All')
-  const [selectedDoctor, setSelectedDoctor] = useState(null)
+  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
+
   const [date, setDate] = useState<Date>()
 
   const filteredDoctors = doctors.filter(doctor => 
@@ -154,6 +155,29 @@ function DoctorsPageComponent() {
      doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase())) &&
     (selectedSpecialty === 'All' || doctor.specialty === specialties.find(s => s.name === selectedSpecialty)?.fullName)
   )
+  interface Contact {
+    phone: string;
+    email: string;
+    website?: string;
+  }
+  
+  interface Doctor {
+    id: number;
+    name: string;
+    specialty: string;
+    image: string;
+    rating: number;
+    experience: number;
+    patients: number;
+    availability: string[];
+    education: string;
+    awards: string[];
+    bio: string;
+    location: string;
+    contact: Contact;
+    website?: string;
+  }
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 py-12 px-4 sm:px-6 lg:px-8">

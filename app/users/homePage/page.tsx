@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Router from "next/router";
+
 
 import Header from "../../users/web_component/page";
 import doctorsData from "../../data/doctors.json";
@@ -8,32 +8,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Search } from "lucide-react";
+
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 import {
   CalendarIcon,
   BedIcon,
   PhoneIcon,
-  HeartPulseIcon,
-  UserIcon,
-  LogIn,
-  UserPlus,
-  Search,
-  Menu,
-  User,
+  
 } from "lucide-react";
 
 function HomePage() {
@@ -212,63 +196,7 @@ function HomePage() {
             </div>
           )}
         </section>
-        {/* <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Find Doctors
-          </h2>
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-8">
-            <Input
-              placeholder="Search by name, specialty, or location"
-              className="flex-grow"
-            />
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-              <Search className="w-4 h-4 mr-2" />
-              Search
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {doctorsData.map((doctor) => (
-              <Card key={doctor.id}>
-                <CardContent className="p-6 flex items-start space-x-4">
-                  <Avatar className="h-16 w-16">
-                    <AvatarImage
-                      src={doctor.avatarUrl}
-                      alt={`Doctor ${doctor.name}`}
-                    />
-                    <AvatarFallback>DR</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">
-                      {doctor.name}
-                    </h3>
-                    <p className="text-gray-600 mb-2">{doctor.specialty}</p>
-                    <div className="flex items-center text-yellow-400 mb-2">
-                      {[...Array(doctor.rating)].map((_, index) => (
-                        <svg
-                          key={index}
-                          className="w-4 h-4 fill-current"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                      ))}
-                      <span className="text-gray-600 ml-2">
-                        ({doctor.reviews} reviews)
-                      </span>
-                    </div>
-                    <Button variant="outline" className="w-full">
-                      Book Appointment
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button variant="outline">View All Doctors</Button>
-          </div>
-        </section> */}
-
+    
         <section className="mb-16">
           <div className="bg-blue-600 text-white rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-2/3 mb-6 md:mb-0">

@@ -143,10 +143,11 @@ const doctors = [
   }
 ]
 
+
 function DoctorsPageComponent() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All')
-  const [selectedDoctor, setSelectedDoctor] = useState(null)
+
   const [date, setDate] = useState<Date>()
 
   const filteredDoctors = doctors.filter(doctor => 
@@ -154,6 +155,25 @@ function DoctorsPageComponent() {
      doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase())) &&
     (selectedSpecialty === 'All' || doctor.specialty === specialties.find(s => s.name === selectedSpecialty)?.fullName)
   )
+  const [selectedDoctor, setSelectedDoctor] = useState<{
+    id: number;
+    name: string;
+    specialty: string;
+    image: string;
+    rating: number;
+    experience: number;
+    patients: number;
+    availability: string[];
+    education: string;
+    awards: string[];
+    bio: string;
+    location: string;
+    contact: {
+      phone: string;
+      email: string;
+      website?: string; 
+    };
+  } | null>(null); // Add inline typing for the selectedDoctor state
 
   return (
     <>

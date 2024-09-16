@@ -4,28 +4,19 @@ import Header from '../../users/web_component/page'
 import { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from '@/components/ui/dialog'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
-import { Slider } from '@/components/ui/slider'
-import { Switch } from '@/components/ui/switch'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Separator } from '@/components/ui/separator'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Calendar } from '@/components/ui/calendar'
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+
 import { CalendarIcon, BedIcon, PhoneIcon, ClipboardListIcon, AmbulanceIcon, UserIcon, HeartPulseIcon, ActivityIcon, CheckCircleIcon, AlertCircleIcon, ClockIcon, DollarSignIcon, StarIcon, ShieldIcon, TrendingUpIcon, ZapIcon, AwardIcon, ThumbsUpIcon, SmileIcon, SearchIcon, MapPinIcon, BellIcon, LockIcon, BarChartIcon, GlobeIcon, CreditCardIcon, MailIcon, PhoneCallIcon, MessageCircleIcon, ChevronRightIcon, ArrowRightIcon, InfoIcon, MenuIcon, XIcon } from 'lucide-react'
 import { start } from 'repl'
 
 
 function ServicesPage() {
-  const [selectedService, setSelectedService] = useState(null)
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [searchTerm, setSearchTerm] = useState('')
   const [compareMode, setCompareMode] = useState(false)
   const [comparedServices, setComparedServices] = useState([])
@@ -36,7 +27,18 @@ function ServicesPage() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
-  const heroRef = useRef(null)
+  const heroRef = useRef<HTMLDivElement>(null);
+  interface Service {
+    icon: React.ReactNode; // Adjust type according to what 'icon' should be
+    title: string;
+    description: string;
+    features: string[];
+    benefits: string[];
+    pricing: string;
+    usageStats: { [key: string]: string | number };
+  }
+
+  
 
   useEffect(() => {
     const timer = setTimeout(() => setProgress(66), 500)
@@ -168,6 +170,8 @@ function ServicesPage() {
     service.description.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <Header />
@@ -265,7 +269,7 @@ function ServicesPage() {
           <BellIcon className="h-6 w-6 text-blue-500" />
           <div>
             <h3 className="font-semibold">New Feature Alert!</h3>
-            <p className="text-sm text-gray-600">We've just launched telemedicine consultations. Try it now!</p>
+            <p className="text-sm text-gray-600">We&apos;ve just launched telemedicine consultations. Try it now!</p>
           </div>
           <Button variant="ghost" size="sm" onClick={() => setShowNotification(false)}>
             Dismiss
@@ -276,7 +280,25 @@ function ServicesPage() {
   )
 }
 
-function ServiceCard({ icon, title, description, onLearnMore, rating, compareMode, onCompare, isCompared }) {
+function ServiceCard({
+  icon,
+  title,
+  description,
+  onLearnMore,
+  rating,
+  compareMode,
+  onCompare,
+  isCompared
+}: {
+  icon: JSX.Element; // The icon prop is a JSX element
+  title: string; // The title prop is a string
+  description: string; // The description prop is a string
+  onLearnMore: () => void; // onLearnMore is a function with no parameters and no return value
+  rating: number; // The rating prop is a number
+  compareMode: boolean; // The compareMode prop is a boolean
+  onCompare: () => void; // onCompare is a function with no parameters and no return value
+  isCompared: boolean; // The isCompared prop is a boolean
+}) {
   return (
     <Card className="flex flex-col h-full transition-all duration-300 hover:shadow-lg">
       <CardHeader>
@@ -323,7 +345,15 @@ function ServiceCard({ icon, title, description, onLearnMore, rating, compareMod
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({
+  icon,
+  title,
+  description
+}: {
+  icon: JSX.Element; // The icon prop is a JSX element
+  title: string; // The title prop is a string
+  description: string; // The description prop is a string
+}) {
   return (
     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:bg-gray-50">
       <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
@@ -335,7 +365,15 @@ function FeatureCard({ icon, title, description }) {
   )
 }
 
-function ImpactCard({ icon, title, value }) {
+function ImpactCard({
+  icon,
+  title,
+  value
+}: {
+  icon: React.ReactNode; // Type for the icon, which is typically JSX or React node
+  title: string; // Type for the title
+  value: string | number; // Type for the value, which could be a string or a number
+})  {
   return (
     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:bg-gray-50">
       <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
@@ -347,7 +385,17 @@ function ImpactCard({ icon, title, value }) {
   )
 }
 
-function StepCard({ number, title, description, icon }) {
+function StepCard({
+  number,
+  title,
+  description,
+  icon
+}: {
+  number: number; // The number prop is a number
+  title: string; // The title prop is a string
+  description: string; // The description prop is a string
+  icon: JSX.Element; // The icon prop is a JSX element
+}) {
   return (
     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:bg-gray-50">
       <div className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center mb-4 text-2xl font-bold">
@@ -362,7 +410,17 @@ function StepCard({ number, title, description, icon }) {
   )
 }
 
-function TestimonialCard({ testimonial, rating }) {
+function TestimonialCard({
+  testimonial,
+  rating
+}: {
+  testimonial: {
+    text: string; // The text of the testimonial
+    avatar: string; // The URL of the avatar image
+    author: string; // The name of the author
+  };
+  rating: number; // The rating prop is a number
+})  {
   return (
     <Card className="bg-white shadow-lg">
       <CardContent className="pt-6">
@@ -372,7 +430,7 @@ function TestimonialCard({ testimonial, rating }) {
           ))}
           <span className="ml-2 text-sm text-gray-600">{rating}/5</span>
         </div>
-        <p className="text-gray-600 mb-4">"{testimonial.text}"</p>
+        <p className="text-gray-600 mb-4">&quot;{testimonial.text}&quot;</p>
         <div className="flex items-center">
           <Avatar className="h-10 w-10 mr-3">
             <AvatarImage src={testimonial.avatar} alt={testimonial.author} />
