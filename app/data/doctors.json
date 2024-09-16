@@ -70,14 +70,6 @@
     "avatarUrl": "/placeholder.svg?height=64&width=64",
     "reviews": 69,
     "rating": 5
-  },
-  {
-    "id": 3,
-    "name": "Dr. Vishal (MALE)",
-    "specialty": "GYNECOLOGIST",
-    "avatarUrl": "/placeholder.svg?height=64&width=64",
-    "reviews": 69,
-    "rating": 5
   }
 ]
 
