@@ -225,7 +225,7 @@ function HomePage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">About Us</h3>
               <p className="text-gray-400">
-                MedBooker is revolutionizing healthcare access with our
+                AAYU is revolutionizing healthcare access with our
                 innovative booking platform.
               </p>
             </div>
@@ -234,7 +234,7 @@ function HomePage() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="./homePage"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Home
@@ -242,7 +242,7 @@ function HomePage() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="./services"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Services
@@ -250,7 +250,7 @@ function HomePage() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="./doctors"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Doctors
@@ -258,7 +258,7 @@ function HomePage() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="./about"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     About
@@ -269,11 +269,11 @@ function HomePage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
               <p className="text-gray-400">
-                123 Health Street
+                NEW DELHI
                 <br />
-                Wellness City, WC 12345
+                INDIA
               </p>
-              <p className="text-gray-400 mt-2">contact@medbooker.com</p>
+              <p className="text-gray-400 mt-2">contact@AAYU.com</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
@@ -319,7 +319,7 @@ function HomePage() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-700 text-center">
             <p className="text-gray-400">
-              &copy; 2023 MedBooker. All rights reserved.
+              &copy; 2024 AAYU. All rights reserved.
             </p>
           </div>
         </div>
