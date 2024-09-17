@@ -344,7 +344,7 @@ function ServicesPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   Booking an appointment is easy! Simply log in to your
-                  MedBooker account, select the &quot;Appointment Booking&quot;
+                  AAYU account, select the &quot;Appointment Booking&quot;
                   service, choose your preferred doctor or specialist, and
                   select an available time slot. You&apos;ll receive a
                   confirmation email with all the details.
@@ -375,10 +375,10 @@ function ServicesPage() {
               </AccordionItem>
               <AccordionItem value="item-4">
                 <AccordionTrigger>
-                  Can I use MedBooker if I don&apos;t have insurance?
+                  Can I use AAYU if I don&apos;t have insurance?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Yes, MedBooker is available to all users, regardless of
+                  Yes, AAYU is available to all users, regardless of
                   insurance status. However, the costs of medical services will
                   vary. We provide transparent pricing information for all
                   services, and many of our basic features are free to use.
@@ -394,13 +394,13 @@ function ServicesPage() {
               Start Your Health Journey Today
             </h2>
             <p className="text-xl mb-8">
-              Experience the future of healthcare with MedBooker.
+              Experience the future of healthcare with AAYU.
             </p>
             <Button
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100"
             >
-              Get Started with MedBooker
+              Get Started with AAYU
             </Button>
           </div>
         </section>
@@ -408,7 +408,7 @@ function ServicesPage() {
         <section id="features" className="py-20 px-4 bg-gray-100">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Why Choose MedBooker?
+              Why Choose AAYU?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <FeatureCard
