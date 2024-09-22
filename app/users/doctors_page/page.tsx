@@ -15,6 +15,10 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 import { Calendar as CalendarIcon, Search, Star, Clock, MapPin, Phone, Mail, Globe, Award, ThumbsUp, Users, Heart, Stethoscope, Activity, Brain, Bone, Eye, Smile, Baby, ChevronLeft, ChevronRight } from 'lucide-react'
 
+
+
+
+
 const specialties = [
   { name: 'All', icon: <Users className="h-4 w-4" /> },
   { name: 'GP', icon: <Stethoscope className="h-4 w-4" />, fullName: 'General Practice' },
@@ -147,6 +151,7 @@ const doctors = [
 function DoctorsPageComponent() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All')
+
 
   const [date, setDate] = useState<Date>()
 
