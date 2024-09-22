@@ -176,6 +176,15 @@ export default function Services_plate() {
     });
   }, [searchTerm, activeTab]);
 
+  const handleBookAppointment = () => {
+    const appointmentDate = new Date();
+    appointmentDate.setDate(appointmentDate.getDate() + 2); // Set date to 2 days from now
+    alert(
+      `Appointment has been booked for ${appointmentDate.toLocaleString()}`
+    );
+  };
+
+
   interface Service {
     icon: JSX.Element;
     title: string;
@@ -332,7 +341,7 @@ export default function Services_plate() {
             </div>
             <DialogFooter>
               <Button onClick={() => setSelectedService(null)}>Close</Button>
-              <Button variant="default">Book Now</Button>
+              <Button variant="default" onClick={handleBookAppointment}>Book Now</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

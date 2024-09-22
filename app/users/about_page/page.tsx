@@ -309,7 +309,7 @@ function ServicesPage() {
               <StepCard
                 number={1}
                 title="Sign Up"
-                description="Create your free MedBooker account in minutes."
+                description="Create your free AAYU account in minutes."
                 icon={<UserIcon className="h-8 w-8 text-blue-500" />}
               />
               <StepCard

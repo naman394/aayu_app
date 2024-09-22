@@ -160,6 +160,15 @@ function DoctorsPageComponent() {
      doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase())) &&
     (selectedSpecialty === 'All' || doctor.specialty === specialties.find(s => s.name === selectedSpecialty)?.fullName)
   )
+
+  const handleBookAppointment = () => {
+    alert(`Appointment has been booked with ${selectedDoctor?.name}`);
+  };
+
+  const handleBookAppointment_second = () => {
+    alert(`Appointment has been booked`);
+  };
+
   const [selectedDoctor, setSelectedDoctor] = useState<{
     id: number;
     name: string;
@@ -284,7 +293,7 @@ function DoctorsPageComponent() {
                   </CardContent>
                   <CardFooter className="p-4 bg-gray-50 flex justify-between items-center">
                     <Button variant="outline" onClick={() => setSelectedDoctor(doctor)}>View Profile</Button>
-                    <Button>Book Appointment</Button>
+                    <Button onClick={handleBookAppointment_second}>Book Appointment</Button>
                   </CardFooter>
                 </Card>
               </motion.div>
@@ -391,7 +400,9 @@ function DoctorsPageComponent() {
                   />
                 </PopoverContent>
               </Popover>
-              <Button onClick={() => setSelectedDoctor(null)}>Book Appointment</Button>
+              <Button onClick={handleBookAppointment}>
+                Book Appointment
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
