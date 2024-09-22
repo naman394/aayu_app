@@ -28,7 +28,9 @@ function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <HeartPulseIcon className="h-8 w-8 text-blue-600" />
-          <span className="text-2xl font-bold text-gray-800">AAYU</span>
+          <span className="text-2xl font-bold text-gray-800">
+            <a href="./homePage">AAYU</a>
+            </span>
         </div>
 
         <div className="hidden md:flex items-center space-x-6">
@@ -45,6 +47,7 @@ function Header() {
                 <Button
                   variant="outline"
                   className="flex items-center space-x-2"
+                  onClick={() => handleRedirection()} // Redirect after sign-up
                 >
                   <UserPlus className="w-4 h-4" />
                   <span>Sign Up</span>

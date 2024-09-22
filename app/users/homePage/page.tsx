@@ -1,6 +1,10 @@
 "use client";
 import Link from "next/link";
 
+import { useRouter } from 'next/navigation';
+
+
+
 
 import Header from "../../users/web_component/page";
 import doctorsData from "../../data/doctors.json";
@@ -24,6 +28,7 @@ function HomePage() {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("signup");
+  const router = useRouter();
   type Doctor = {
     id: number;
     name: string;
@@ -64,15 +69,16 @@ function HomePage() {
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto"
+              onClick={ () => router.push('/users/services')}
             >
-              <Link href="/users/services" passHref>
+              
                 Get Started
-              </Link>
+              
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto">
-              <Link href="/users/about_page" passHref>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={ () => router.push('/users/about_page')} >
+              
                 Learn More
-              </Link>
+              
             </Button>
           </div>
         </section>
@@ -92,10 +98,10 @@ function HomePage() {
                   <p className="text-gray-600 mb-4">
                     Schedule a visit with top healthcare professionals.
                   </p>
-                  <Button variant="outline" className="w-full">
-                    <Link href="/users/services" passHref>
+                  <Button variant="outline" className="w-full" onClick={ () => router.push('/users/services')}>
+                    
                       Book Now
-                    </Link>
+                    
                   </Button>
                 </CardContent>
               </Card>
@@ -108,10 +114,10 @@ function HomePage() {
                   <p className="text-gray-600 mb-4">
                     Secure a hospital bed for planned procedures or emergencies.
                   </p>
-                  <Button variant="outline" className="w-full">
-                    <Link href="/users/services" passHref>
+                  <Button variant="outline" className="w-full" onClick={ () => router.push('/users/services')}>
+                    
                       Check Availability
-                    </Link>
+                    
                   </Button>
                 </CardContent>
               </Card>
@@ -122,10 +128,10 @@ function HomePage() {
                   <p className="text-gray-600 mb-4">
                     Consult with doctors remotely from the comfort of your home.
                   </p>
-                  <Button variant="outline" className="w-full">
-                    <Link href="/users/services" passHref>
+                  <Button variant="outline" className="w-full" onClick={ () => router.push('/users/services')}>
+                    
                       Start Consultation
-                    </Link>
+                    
                   </Button>
                 </CardContent>
               </Card>
@@ -204,7 +210,7 @@ function HomePage() {
                 Ready to take control of your health?
               </h2>
               <p className="text-xl">
-                Join thousands of users who trust MedBooker for their healthcare
+                Join thousands of users who trust AAYU for their healthcare
                 needs.
               </p>
             </div>
@@ -212,8 +218,9 @@ function HomePage() {
               size="lg"
               variant="secondary"
               className="bg-white text-blue-600 hover:bg-gray-100"
+              onClick={()=>{router.push("./doctors_page")}}
             >
-              Sign Up Now
+              EXPLORE NOW 
             </Button>
           </div>
         </section>
