@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // Change this line from "postgresql" to "mysql"
+  url      = env("DATABASE_URL")
+}
+model Doctor {
+  id           Int            @id @default(autoincrement())
+  name         String
+  specialty    String
+  image        String   @db.Text // Use Text for longer strings
+  rating       Float
+  experience   Int
+  patients     Int
+  education    String
+  bio          String
+  location     String
+  contact      Contact        @relation(fields: [contactId], references: [id])
+  contactId    Int            @unique // Make this field unique
+  availability Availability[]
+  awards       Award[]
+}
+
+model Contact {
+  id      Int     @id @default(autoincrement())
+  phone   String
+  email   String
+  website String
+  doctor  Doctor? @relation // Keep this as optional
+}
+
+model Availability {
+  id       Int    @id @default(autoincrement())
+  day      String // Represents the day of availability
+  doctor   Doctor @relation(fields: [doctorId], references: [id])
+  doctorId Int
+}
+
+model Award {
+  id       Int    @id @default(autoincrement())
+  title    String // Represents the title of the award
+  doctor   Doctor @relation(fields: [doctorId], references: [id])
+  doctorId Int
+}
